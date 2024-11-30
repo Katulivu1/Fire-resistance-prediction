@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Building Details</h1>
+        <form action="/predict" method="POST">
+            <label for="wall_thickness">Wall Thickness (Single or Double Wall):</label>
+            <input type="number" id="wall_thickness" name="wall_thickness" min="1" max="2" value="1" required><br>
+
+            <label for="height_floors">Number of Floors:</label>
+            <input type="number" id="height_floors" name="height_floors" value="1" required><br>
+
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" value="20" step="0.1" required><br>
+
+            <label for="wind">Wind Speed (m/s):</label>
+            <input type="number" id="wind" name="wind" value="7" step="0.1" required><br>
+
+            <label for="humidity">Humidity (%):</label>
+            <input type="number" id="humidity" name="humidity" value="40" step="0.1" required><br>
+
+            <label for="area_m2">Area (m²):</label>
+            <input type="number" id="area_m2" name="area_m2" value="50" step="0.1" required><br>
+
+            <label for="room_number">Number of Rooms:</label>
+            <input type="number" id="room_number" name="room_number" value="3" required><br>
+
+            <label for="room_occupants">Room Occupants:</label>
+            <input type="number" id="room_occupants" name="room_occupants" value="3" required><br>
+
+
+            <!-- Added Missing Fields -->
+           
+            <label for="structural_type">Structural Type:</label>
+            <select id="structural_type" name="structural_type" required>
+                <option value="Masonry Structures">Masonry Structures</option>
+                <option value="Timber Structures">Timber Structures</option>
+            </select><br>
+
+            <label for="construction_material">Construction Material:</label>
+            <select id="construction_material" name="construction_material" required>
+                <option value="Concrete">Concrete</option>
+                <option value="Steel">Steel</option>
+                <option value="Timber">Timber</option>
+            </select><br>
+
+            <label for="fire_load_type">Building Type:</label>
+            <select id="fire_load_type" name="fire_load_type" required>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+            </select><br>
+
+            <label for="paint">Paint Type:</label>
+            <select id="paint" name="paint" required>
+                <option value="Fire Resistant Paint">Fire Resistant Paint</option>
+                <option value="Standard Paint">Standard Paint</option>
+            </select><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

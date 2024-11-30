@@ -1,0 +1,97 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #e0f7fa, #f4f7f9);
+    /* flex-direction: row; */
+}
+
+.body-div {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container style */
+.container {
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading style */
+h1 {
+    color: #009688;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;  /* Ensures text is centered */
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Label and input styles */
+label {
+    font-size: 1.1rem;
+    color: #333;
+    text-align: left;
+    padding-left: 10px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fafafa;
+}
+
+input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #009688;
+    background-color: #e0f7fa;
+}
+
+input[type="submit"] {
+    background-color: #009688;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #00796b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
