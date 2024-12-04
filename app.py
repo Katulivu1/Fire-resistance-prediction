@@ -7,7 +7,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the trained model
-with open('fire_model.pkl', 'rb') as f:
+with open('revised_fire_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Load the fitted label encoders
@@ -31,7 +31,7 @@ def predict():
     structural_type = request.form['structural_type']
     construction_material = request.form['construction_material']
     fire_load_type = request.form['fire_load_type']
-    wall_thickness = float(request.form['wall_thickness'])
+    wall_thickness = request.form['wall_thickness']
     height_floors = int(request.form['height_floors'])
     temperature = float(request.form['temperature'])
     wind = float(request.form['wind'])
@@ -65,6 +65,7 @@ def predict():
     input_df['construction_material'] = label_encoders['construction_material'].transform(input_df['construction_material'])
     input_df['fire_load_type'] = label_encoders['fire_load_type'].transform(input_df['fire_load_type'])
     input_df['paint'] = label_encoders['paint'].transform(input_df['paint'])
+    input_df['wall_thickness'] = label_encoders['wall_thickness'].transform(input_df['wall_thickness'])
 
     # Predict using the loaded model
     prediction = model.predict(input_df)
